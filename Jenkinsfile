@@ -6,11 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/gollarambabu846/my-app.git'
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
