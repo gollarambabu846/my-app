@@ -15,7 +15,10 @@ pipeline {
 
         stage('Run App') {
             steps {
-                sh 'node app.js'
+                sh '''
+                 pm2 delete my-app || true
+                 pm2 start app.js --name my-app
+                 '''
             }
         }
     }
