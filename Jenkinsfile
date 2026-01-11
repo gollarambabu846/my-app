@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'NodeJS'
+        nodejs 'npm'
     }
 
     stages {
@@ -20,7 +20,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test || echo "No tests defined"'
+                sh 'npm test || echo "No tests available"'
             }
         }
 
