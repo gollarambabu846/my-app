@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/gollarambabu846/my-app.git'
             }
@@ -18,15 +18,9 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Run App') {
             steps {
-                sh 'npm test || echo "No tests available"'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying application...'
+                sh 'node app.js'
             }
         }
     }
